@@ -1,6 +1,8 @@
 <?php
+//memanggil class atau file m_siswa pada folder model
 include_once '../controllers/c_koneksi.php';
 
+// membuat kelas siswa
 class siswa
 {
 
@@ -8,11 +10,18 @@ class siswa
 	function tampil_data()
 	{
 
+		//deklarasi objeck koneksi database
 		$conn = new database();
+
+		//query untuk menampilkan data dari tabel siswa 
 		$data = mysqli_query($conn->koneksi, "select * from siswa order by id_siswa desc");
+
+		//ubah data menjadi objeck 
 		while ($d = mysqli_fetch_object($data)) {
+			//simpan kedalam variabel hasil yang berbentuk array
 			$hasil[] = $d;
 		}
+		//kembalikan nilai nya
 		return $hasil;
 	}
 
