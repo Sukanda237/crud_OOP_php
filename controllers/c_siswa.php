@@ -2,6 +2,7 @@
 
 include_once '../models/m_siswa.php';
 
+//object 
 $siswa = new siswa();
 
 if (isset($_POST['tambah']) || isset($_POST['update'])) {
