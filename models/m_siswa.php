@@ -4,6 +4,7 @@ include_once '../controllers/c_koneksi.php';
 class siswa
 {
 
+	//ini untuk menampilkan data dari tabel siswa
 	function tampil_data()
 	{
 
