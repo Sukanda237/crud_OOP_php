@@ -1,6 +1,7 @@
 <?php
 //memanggil class atau file m_siswa pada folder model
-include_once '../controllers/c_koneksi.php';
+require_once(__DIR__ . "../../controllers/c_koneksi.php");
+
 
 // membuat kelas siswa
 class siswa

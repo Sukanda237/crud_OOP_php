@@ -15,16 +15,16 @@ if (isset($_POST['tambah']) || isset($_POST['update'])) {
         $result = $siswa->input($id, $nama, $jk, $alamat);
 
         if ($result) {
-            echo "<script>alert('Data Berhasil Ditambahkan');window.location='../views/tampil_data.php'</script>";
+            echo "<script>alert('Data Berhasil Ditambahkan');window.location='../views/siswa/tampil_data.php'</script>";
         } else {
-            echo "<script>alert('Data Gagal Ditambah');window.location='../views/tampil_data.php'</script>";
+            echo "<script>alert('Data Gagal Ditambah');window.location='../views/siswa/tampil_data.php'</script>";
         }
     } elseif ($_GET['aksi'] == 'update') {
         $result = $siswa->update($id, $nama, $jk, $alamat);
         if ($result) {
-            echo "<script>alert('Data Berhasil Diubah');window.location='../views/tampil_data.php'</script>";
+            echo "<script>alert('Data Berhasil Diubah');window.location='../views/siswa/tampil_data.php'</script>";
         } else {
-            echo "<script>alert('Data Gagal Diubah');window.location='../views/tampil_data.php'</script>";
+            echo "<script>alert('Data Gagal Diubah');window.location='../views/siswa/tampil_data.php'</script>";
         }
     }
 } else {
@@ -33,9 +33,9 @@ if (isset($_POST['tambah']) || isset($_POST['update'])) {
         $result = $siswa->hapus($id);
 
         if ($result) {
-            echo "<script>alert('Data Berhasil Dihapus');window.location='../views/tampil_data.php'</script>";
+            echo "<script>alert('Data Berhasil Dihapus');window.location='../views/siswa/tampil_data.php'</script>";
         } else {
-            echo "<script>alert('Data Gagal Dihapus');window.location='../views/tampil_data.php'</script>";
+            echo "<script>alert('Data Gagal Dihapus');window.location='../views/siswa/tampil_data.php'</script>";
         }
     }
 }

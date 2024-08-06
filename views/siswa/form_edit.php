@@ -1,3 +1,14 @@
+<?php
+
+include_once '../../models/m_siswa.php';
+
+$siswa = new siswa();
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,37 +69,41 @@
             </div>
             <div class="col-8">
                 <br>
-                <h2 class="text-center">Form Tambah Data Siswa</h2>
+                <h2 class="text-center">Form Edit Data Siswa</h2>
                 <br>
-                <form action="../controllers/c_siswa.php?aksi=tambah" method="post" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="id_siswa">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nama Siswa</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nama Siswa" name="nama_siswa">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Jenis Kelamin</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="jk_siswa" id="flexRadioDefault1" value="laki-laki" checked>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Laki-Laki
-                            </label>
+                <form action="../../controllers/c_siswa.php?aksi=update" method="post" enctype="multipart/form-data">
+
+                    <?php foreach ($siswa->tampil_data_id($_GET['id_siswa']) as $siswa) :  ?>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="id_siswa" value="<?= $siswa->id_siswa ?>">
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="jk_siswa" id="flexRadioDefault2" value="perempuan">
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Perempuan
-                            </label>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Nama Siswa</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nama Siswa" name="nama_siswa" value="<?= $siswa->nama_siswa ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Jenis Kelamin</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="jk_siswa" id="flexRadioDefault1" value="laki-laki" <?= ($siswa->jk_siswa == 'laki-laki') ? 'checked' : '' ?>>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Laki-Laki
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="jk_siswa" id="flexRadioDefault2" value="perempuan" <?= ($siswa->jk_siswa == 'perempuan') ? 'checked' : '' ?>>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Perempuan
+                                </label>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat_siswa"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat_siswa"><?= $siswa->alamat_siswa ?></textarea>
                         </div>
-                    </div>
+                    <?php endforeach ?>
+
                     <div class="col-12">
-                        <button class="btn btn-primary" name="tambah" type="submit">Submit</button>
+                        <button class="btn btn-primary" name="update" type="submit">Submit</button>
                     </div>
                 </form>
             </div>

@@ -1,5 +1,6 @@
 <?php
-include_once '../models/m_siswa.php';
+include_once '../../models/m_siswa.php';
+
 $db = new siswa();
 ?>
 
@@ -87,7 +88,7 @@ $db = new siswa();
                 <td><?= $x->alamat_siswa; ?></td>
                 <td>
                   <a href="form_edit.php?id_siswa=<?= $x->id_siswa; ?>&aksi=edit"><button type="button" class="btn btn-round btn-primary">Edit</button></a>
-                  <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="../controllers/c_siswa.php?id_siswa=<?= $x->id_siswa ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
+                  <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="../../controllers/c_siswa.php?id_siswa=<?= $x->id_siswa ?>&aksi=hapus"><button type="button" name="hapus" class="btn btn-round btn-danger">Hapus</button></a>
                 </td>
               </tr>
             <?php
