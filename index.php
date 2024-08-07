@@ -43,7 +43,7 @@
                             <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
                         </div>
 
-                        <a data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!" role="button">
+                        <a data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="views/register.php" role="button">
                             <i class="fab fa-facebook-f me-2"></i>Register
                         </a>
 
